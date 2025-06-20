@@ -39,7 +39,7 @@ A visually stunning 3D developer portfolio built with React, Three.js, and Tailw
 
 ## 📁 Project Setup
 
-### 1. Clone the Repository
+### Clone the Repository
 
 ```bash
 git clone https://github.com/yourusername/3d-portfolio.git
