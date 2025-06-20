@@ -1,12 +1,46 @@
-# React + Vite
+# 🧑‍💻 3D Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A visually stunning 3D developer portfolio built with React, Three.js, and Tailwind CSS to showcase projects, skills, and experience in an interactive and immersive way.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🧊 **3D Interactive Hero Section**  
+  Eye-catching 3D model or canvas rendered using Three.js and @react-three/fiber, giving a modern, immersive feel.
 
-## Expanding the ESLint configuration
+- 💼 **Project Showcase**  
+  Displays your top projects with descriptions, images, live demo links, and GitHub source code buttons.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 📱 **Responsive Design**  
+  Fully optimized for all devices — desktops, tablets, and smartphones — with a mobile-first UI.
+
+- 💬 **Animated Transitions**  
+  Smooth animations and transitions across sections using Framer Motion for a professional feel.
+
+- 📄 **About & Skills Section**  
+  Includes your bio, technical skills with logos or progress bars, and tools you are proficient in.
+
+- 📬 **Contact Form**  
+  Simple email contact form with validation, powered by services like EmailJS or Formspree.
+
+- 🌙 **Dark Mode (Optional)**  
+  Support for theme switching between light and dark modes.
+
+- ⚡ **Fast Build & Deploy**  
+  Built with Vite/Webpack for fast development and deployable on Vercel, Netlify, or GitHub Pages.
+
+
+## 📦 Tech Stack Used
+
+- ⚛️ **React.js** – UI Library
+- 🎮 **Three.js / @react-three/fiber** – 3D rendering
+- 🌀 **Tailwind CSS** – Styling and layout
+- 💬 **Framer Motion** – Smooth animations
+- 📦 **Vite / Webpack** – Fast build tool (choose based on your setup)
+
+## 📁 Project Setup
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/3d-portfolio.git
+cd 3d-portfolio
