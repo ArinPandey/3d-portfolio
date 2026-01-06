@@ -20,7 +20,17 @@ const renderContent = {
 	1:(
 		<h1 className="sm:text-xl sm:leading-snug text-center bg-[#2b77e7] relative rounded-lg border-[#2b77e7] 
 		shadow-[0.6vmin_0.6vmin_#336cc1,1vmin_1vmin_#0092db,1vmin_1vmin_#0092db,0.65vmin_1vmin_#0092db,
-		1vmin_0.65vmin_#0092db] py-4 px-8 text-white mx-5">Hi, I am <span>Arin Pandey</span>👋<br/>A software developer. </h1>
+		1vmin_0.65vmin_#0092db] py-4 px-8 text-white mx-5">
+			Hi, I am <span className="font-semibold">Arin Pandey</span>👋
+			<br/>
+			A software developer.
+			
+			{/* Added instruction here with smaller text */}
+			<br/><br/>
+			<span className="text-sm font-normal italic text-blue-100">
+				(Use left or right keys to rotate the island 🏝️)
+			</span>
+		</h1>
 		),
 	2:(
 		<InfoBox 
