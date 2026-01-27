@@ -1,3 +1,4 @@
+
 import React from 'react'
 import {Link} from 'react-router-dom'
 import {arrow} from "../assets/icons"
@@ -59,4 +60,22 @@ const HomeInfo = ({currentStage}) => {
 	return renderContent[currentStage] || null;
 }
 
-export default HomeInfo
+export default HomeInfo;
+
+// Segment A: The InfoBox (The Reusable Card)
+// Instead of writing the same HTML code three times for stages 2, 3, and 4, the teacher created this reusable component.
+// Purpose: It acts as a template. You just pass in the text and the link destination, and it generates the UI box with the blue styling and the white button.
+
+// Segment B: renderContent (The Lookup Table)
+// This is a Javascript Object (dictionary) acting as a "Switch Statement". It maps a number (the stage) to a specific piece of JSX code.
+// Stage 1: Is unique. It is the "Hello" message, so it is hardcoded separately with an <h1> tag.
+// Stage 2, 3, 4: These are similar "Call to Action" cards, so they use the <InfoBox /> component we defined earlier to keep the code clean.
+
+// Segment C: HomeInfo (The Gatekeeper)
+// This is the only thing actually exported to the rest of the app.
+// Logic: It looks at the currentStage prop passed from the parent.
+// Lookup: It tries to find that number in the renderContent object.
+// If currentStage is 1, it renders the greeting.
+// If currentStage is 2, it renders the "About" box.
+// The Safety Net (|| null): If currentStage is null (which happens when you are spinning the island between stops), 
+// this code returns null. In React, returning null means "render nothing on the screen."

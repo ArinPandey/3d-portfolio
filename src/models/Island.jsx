@@ -1,3 +1,5 @@
+// This is the island component...
+
 import { useRef,useEffect } from 'react'
 import { useGLTF } from '@react-three/drei'
 import {useFrame,useThree} from '@react-three/fiber'
@@ -125,7 +127,9 @@ const Island = ({isRotating,setIsRotating,setCurrentStage,...props}) => {
     }
   })
 
+  // "useEffect" hook to use the callback function when any of the variables changes in the dependency array, used for rotation if any event happened...
   useEffect(() => {
+    // adding event listeners when we are on the page...
     const canvas = gl.domElement;
     canvas.addEventListener('pointerdown',handlePointerDown);
     canvas.addEventListener('pointerup',handlePointerUP);
@@ -133,6 +137,7 @@ const Island = ({isRotating,setIsRotating,setCurrentStage,...props}) => {
     document.addEventListener('keydown',handleKeyDown);
     document.addEventListener('keyup',handleKeyUp);
 
+    // removing them when we leave the page...
     return() => {
       canvas.removeEventListener('pointerdown',handlePointerDown);
       canvas.removeEventListener('pointerup',handlePointerUP);

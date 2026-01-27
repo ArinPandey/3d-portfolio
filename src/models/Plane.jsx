@@ -8,6 +8,7 @@ const Plane = ({isRotating,...props}) => {
 	const {scene,animations} = useGLTF(planeScene)
 	const {actions} = useAnimations(animations,ref)
 
+	// this effect is rotation of wings when the island is rotating, "actions['Take 001']" is predefined action in react-three/drei 
 	useEffect(() => {
 		if(isRotating){
 			actions['Take 001'].play();

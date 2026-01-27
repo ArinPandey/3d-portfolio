@@ -28,7 +28,6 @@ const Contact = () => {
 		emailjs.send(
 			import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
 			import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-			import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
 			{
 				from_name:form.name,
 				to_name:"Arin",
@@ -62,9 +61,9 @@ const Contact = () => {
 			})
 	}
 
-	const handleFocus = () => setCurrentAnimation('walk');
+	const handleFocus = () => setCurrentAnimation('walk'); //It is a function, that runs when someone is writing...
 
-	const handleBlur = () => setCurrentAnimation('idle'); 
+	const handleBlur = () => setCurrentAnimation('idle'); //It is a function too, that runs when someone is stopped writing...
 
 	return (
 		<section className="relative flex lg:flex-row flex-col max-w-5xl mx-auto sm:p-16 pb-12 !pt-[126px] px-8 min-h-[calc(100vh-80px)">

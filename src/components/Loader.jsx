@@ -1,3 +1,5 @@
+// This component shows loader while the scene is rendering...
+
 import React from 'react'
 import {Html} from "@react-three/drei"
 

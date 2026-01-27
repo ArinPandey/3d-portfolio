@@ -9,9 +9,11 @@ function App() {
 
   return (
     <main className="bg-slate-300/20 h-[100vh]">
+      {/* First Step : Creating Routes for different pages...*/}
       <Router>
         <Navbar />
         <Routes>
+          {/*Different components and their routes*/}
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/projects' element={<Projects />} />
