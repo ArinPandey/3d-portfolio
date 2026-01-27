@@ -20,45 +20,86 @@ const Contact = () => {
 		setForm({...form,[e.target.name]:e.target.value})
 	};
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		setLoading(true)
-		setCurrentAnimation('hit')
+	// const handleSubmit = (e) => {
+	// 	e.preventDefault();
+	// 	setLoading(true)
+	// 	setCurrentAnimation('hit')
 
-		emailjs.send(
-			import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
-			import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
-			{
-				from_name:form.name,
-				to_name:"Arin",
-				from_email:form.email,
-				to_email:'www.arinpandey@gmail.com',
-				message:form.message,
-			},
-			import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+	// 	emailjs.send(
+	// 		import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+	// 		import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+	// 		{
+	// 			from_name:form.name,
+	// 			to_name:"Arin",
+	// 			from_email:form.email,
+	// 			to_email:'www.arinpandey@gmail.com',
+	// 			message:form.message,
+	// 		},
+	// 		import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
 			
-			).then(() => {
-				setLoading(false);
-				showAlert({
-		            show: true,
-		            text: "Thank you for your message 😃",
-		            type: "success",
-		          });
+	// 		).then(() => {
+	// 			setLoading(false);
+	// 			showAlert({
+	// 	            show: true,
+	// 	            text: "Thank you for your message 😃",
+	// 	            type: "success",
+	// 	          });
 
-				setTimeout(() => {
-					setCurrentAnimation('idle')
-					setForm({name:"",email:"",message:""});
-				},3000)
-			}).catch((error) => {
-				setLoading(false);
-				setCurrentAnimation('idle')
-				console.log(error);
-				showAlert({
-		            show: true,
-		            text: "I didn't receive your message 😢",
-		            type: "danger",
-		          });
-			})
+	// 			setTimeout(() => {
+	// 				setCurrentAnimation('idle')
+	// 				setForm({name:"",email:"",message:""});
+	// 			},3000)
+	// 		}).catch((error) => {
+	// 			setLoading(false);
+	// 			setCurrentAnimation('idle')
+	// 			console.log(error);
+	// 			showAlert({
+	// 	            show: true,
+	// 	            text: "I didn't receive your message 😢",
+	// 	            type: "danger",
+	// 	          });
+	// 		})
+	// }
+
+	const handleSubmit = (e) => {
+	    e.preventDefault();
+	    setLoading(true); // ✅ Fixed: Matches your state definition
+	    setCurrentAnimation('hit');
+
+	    emailjs.send(
+	        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+	        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+	        {
+	            from_name: form.name,
+	            to_name: "Arin",
+	            from_email: form.email,
+	            to_email: 'www.arinpandey@gmail.com',
+	            message: form.message,
+	        },
+	        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+	    ).then(() => {
+	        setLoading(false); // ✅ Fixed
+	        showAlert({
+	            show: true,
+	            text: "Thank you for your message 😃",
+	            type: "success",
+	        });
+
+	        setTimeout(() => {
+	            setCurrentAnimation('idle');
+	            setForm({ name: "", email: "", message: "" });
+	        }, 3000); // ✅ Fixed: Removed the [] brackets
+
+	    }).catch((error) => {
+	        setLoading(false); // ✅ Fixed
+	        setCurrentAnimation('idle');
+	        console.log(error);
+	        showAlert({
+	            show: true,
+	            text: "I didn't receive your message 😢",
+	            type: "danger",
+	        });
+	    })
 	}
 
 	const handleFocus = () => setCurrentAnimation('walk'); //It is a function, that runs when someone is writing...
