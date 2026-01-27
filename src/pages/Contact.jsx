@@ -22,7 +22,7 @@ const Contact = () => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		setIsLoading(true)
+		setLoading(true)
 		setCurrentAnimation('hit')
 
 		emailjs.send(
@@ -38,7 +38,7 @@ const Contact = () => {
 			import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
 			
 			).then(() => {
-				setIsLoading(false);
+				setLoading(false);
 				showAlert({
 		            show: true,
 		            text: "Thank you for your message 😃",
@@ -48,9 +48,9 @@ const Contact = () => {
 				setTimeout(() => {
 					setCurrentAnimation('idle')
 					setForm({name:"",email:"",message:""});
-				},[3000])
+				},3000)
 			}).catch((error) => {
-				setIsLoading(false);
+				setLoading(false);
 				setCurrentAnimation('idle')
 				console.log(error);
 				showAlert({
@@ -131,6 +131,7 @@ const Contact = () => {
 				</form>
 			</div>
 
+			{/*For large devices, show the fox/canvas*/}
 			<div className="lg:w-1/2 w-full lg:h-auto md:h-[550px] h-[350px]">
 				<Canvas
 					camera={{
